@@ -93,4 +93,21 @@ public class UserRegistration {
             System.out.println("Password is Invalid");
         return result;
     }
+
+    public boolean validUpperCasePassword() {
+
+        System.out.println("Enter upperCasePassword: ");
+        String UpperPassword = sc.next();
+        String regex = "^[A-Za-z0-9]{8,}$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(UpperPassword);
+        boolean result = matcher.matches();
+        System.out.println(result);
+
+        if (result)
+            System.out.println("Password is Valid");
+        else
+            System.out.println("Password is Invalid");
+        return result;
+    }
 }
