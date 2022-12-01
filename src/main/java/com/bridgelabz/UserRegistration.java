@@ -29,14 +29,32 @@ public class UserRegistration {
         System.out.println("Enter Last Name: ");
         String lastName = sc.next();
         String regex1 = "^[A-Z]{1}[a-z]{2,}$";
-        Pattern pattern1 = Pattern.compile(regex1);
-        Matcher matcher1 = pattern1.matcher(lastName);
-        boolean result1 = matcher1.matches();
+        Pattern pattern = Pattern.compile(regex1);
+        Matcher matcher = pattern.matcher(lastName);
+        boolean result1 = matcher.matches();
 
         if (result1)
             System.out.println("Last Name is valid");
         else
             System.out.println("Last Name is Invalid");
         return result1;
+    }
+
+    public boolean validEmail() {
+
+        System.out.println("Enter EMail: ");
+        String EMail = sc.next();
+        String regex = "^[a-zA-Z0-9.]+[@][a-zA-Z]{3,}[.][a-zA-Z]{2,5}$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(EMail);
+        boolean result = matcher.matches();
+        System.out.println(result);
+
+        if (result)
+            System.out.println("Email is Valid");
+        else
+            System.out.println("Email is Invalid");
+
+        return result;
     }
 }
