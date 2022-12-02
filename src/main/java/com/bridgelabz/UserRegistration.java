@@ -63,7 +63,7 @@ public class UserRegistration {
         System.out.println("Enter Mobile Number: ");
         String MobileNumber = sc.next();
         String regex = "^([+]\\d{2})?\\d{10}$";          // Country code is not mandatory
-       // String regex = "^[+][0-9]{2}[0-9]{10}$";          Country code is mandatory
+        // String regex = "^[+][0-9]{2}[0-9]{10}$";          Country code is mandatory
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(MobileNumber);
         boolean result = matcher.matches();
@@ -80,7 +80,8 @@ public class UserRegistration {
     public boolean validPassword() {
 
         System.out.println("Enter Password: ");
-        String Password = sc.next();;
+        String Password = sc.next();
+        ;
         String regex = "^[a-zA-Z]{8,}$";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(Password);
@@ -89,6 +90,40 @@ public class UserRegistration {
 
         if (result)
             System.out.println("Password is valid");
+        else
+            System.out.println("Password is Invalid");
+        return result;
+    }
+
+    public boolean validUpperCasePassword() {
+
+        System.out.println("Enter upperCasePassword: ");
+        String UpperPassword = sc.next();
+        String regex = "^[A-Za-z0-9]{8,}$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(UpperPassword);
+        boolean result = matcher.matches();
+        System.out.println(result);
+
+        if (result)
+            System.out.println("Password is Valid");
+        else
+            System.out.println("Password is Invalid");
+        return result;
+    }
+
+    public boolean validNumericPassword() {
+
+        System.out.println("Enter numericPassword: ");
+        String NumericPassword = sc.next();
+        String regex = "^[A-Z][a-z0-9]{8,}$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(NumericPassword);
+        boolean result = matcher.matches();
+        System.out.println(result);
+
+        if (result)
+            System.out.println("Password is Valid");
         else
             System.out.println("Password is Invalid");
         return result;
