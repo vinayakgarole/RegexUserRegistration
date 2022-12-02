@@ -33,6 +33,7 @@ public class UserRegistrationMain {
                 user.validUpperCasePassword();
                 break;
             case 7:
+
                 user.validNumericPassword();
                 break;
         }
