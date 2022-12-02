@@ -111,6 +111,7 @@ public class UserRegistration {
             System.out.println("Password is Invalid");
         return result;
     }
+<<<<<<< HEAD
 
     public boolean validNumericPassword() {
 
@@ -128,4 +129,6 @@ public class UserRegistration {
             System.out.println("Password is Invalid");
         return result;
     }
+=======
+>>>>>>> 684d0eb15b0026c0e88e33e95e5b3c115528557f
 }
