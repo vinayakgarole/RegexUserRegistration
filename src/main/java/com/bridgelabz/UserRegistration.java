@@ -1,165 +1,87 @@
 package com.bridgelabz;
 
-import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class UserRegistration {
 
-    Scanner sc = new Scanner(System.in);
+    public static boolean validFirstName(String name) {
 
-
-    public boolean validFirstName() {
-
-        System.out.println("Enter First Name: ");
-        String name = sc.next();
         String regex = "^[A-Z]{1}[a-z]{2,}$";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(name);
         boolean result = matcher.matches();
-
-        if (result)
-            System.out.println("First name is valid");
-        else
-            System.out.println("First name is Invalid");
+        System.out.println(result);
         return result;
     }
 
-    public boolean validLastName() {
+    public static boolean validLastName(String name) {
 
-        System.out.println("Enter Last Name: ");
-        String lastName = sc.next();
-        String regex1 = "^[A-Z]{1}[a-z]{2,}$";
-        Pattern pattern = Pattern.compile(regex1);
-        Matcher matcher = pattern.matcher(lastName);
-        boolean result1 = matcher.matches();
-
-        if (result1)
-            System.out.println("Last Name is valid");
-        else
-            System.out.println("Last Name is Invalid");
-        return result1;
+        String regex = "^[A-Z]{1}[a-z]{2,}$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(name);
+        boolean result = matcher.matches();
+        System.out.println(result);
+        return result;
     }
 
-    public boolean validEmail() {
+    public static boolean validEmail(String email) {
 
-        System.out.println("Enter EMail: ");
-        String EMail = sc.next();
         String regex = "^[a-z]*.[a-z]+@[a-z]+.[a-z]{2,3}(.[a-z]{2})*$";
         Pattern pattern = Pattern.compile(regex);
-        Matcher matcher = pattern.matcher(EMail);
+        Matcher matcher = pattern.matcher(email);
         boolean result = matcher.matches();
         System.out.println(result);
-
-        if (result)
-            System.out.println("Email is Valid");
-        else
-            System.out.println("Email is Invalid");
-
         return result;
     }
 
-    public boolean validMobileNumber() {
+    public static boolean validMobileNumber(String mobileNo) {
 
-        System.out.println("Enter Mobile Number: ");
-        String MobileNumber = sc.next();
         String regex = "^[\\d]{2}\\s[\\d]{10}$";
         Pattern pattern = Pattern.compile(regex);
-        Matcher matcher = pattern.matcher(MobileNumber);
+        Matcher matcher = pattern.matcher(mobileNo);
         boolean result = matcher.matches();
         System.out.println(result);
-
-        if (result)
-            System.out.println("Mobile Number is Valid");
-        else
-            System.out.println("Mobile Number is Invalid");
         return result;
     }
 
+    public static boolean validPasswordRule1(String passwordRule1) {
 
-    public boolean validPassword() {
-
-        System.out.println("Enter Password: ");
-        String Password = sc.next();
-        ;
         String regex = "^[A-Za-z0-9@._-]{8,}$";
         Pattern pattern = Pattern.compile(regex);
-        Matcher matcher = pattern.matcher(Password);
+        Matcher matcher = pattern.matcher(passwordRule1);
         boolean result = matcher.matches();
         System.out.println(result);
-
-        if (result)
-            System.out.println("Password is valid");
-        else
-            System.out.println("Password is Invalid");
         return result;
     }
 
-    public boolean validUpperCasePassword() {
+    public static boolean validPasswordRule2(String passwordRule2) {
 
-        System.out.println("Enter upperCasePassword: ");
-        String UpperPassword = sc.next();
-        String regex = "^[A-Za-z0-9]{8,}$";
-        Pattern pattern = Pattern.compile(regex);
-        Matcher matcher = pattern.matcher(UpperPassword);
-        boolean result = matcher.matches();
-        System.out.println(result);
-
-        if (result)
-            System.out.println("Password is Valid");
-        else
-            System.out.println("Password is Invalid");
-        return result;
-    }
-
-    public boolean validNumericPassword() {
-
-        System.out.println("Enter numericPassword: ");
-        String NumericPassword = sc.next();
         String regex = "^[A-Z]{1}[A-Za-z0-9@._-]{7,}$";
         Pattern pattern = Pattern.compile(regex);
-        Matcher matcher = pattern.matcher(NumericPassword);
+        Matcher matcher = pattern.matcher(passwordRule2);
         boolean result = matcher.matches();
         System.out.println(result);
-
-        if (result)
-            System.out.println("Password is Valid");
-        else
-            System.out.println("Password is Invalid");
         return result;
     }
 
-    public boolean validSpecialPassword() {
+    public static boolean validPasswordRule3(String passwordRule3) {
 
-        System.out.println("Enter validSpecialPassword: ");
-        String SpecialPassword = sc.next();
+        String regex = "^(?=.*[A-z])(?=.*[0-9])([a-zA-Z0-9@._-]).{8,}$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(passwordRule3);
+        boolean result = matcher.matches();
+        System.out.println(result);
+        return result;
+    }
+
+    public static boolean validPasswordRule4(String passwordRule4) {
+
         String regex = "^(?=.*[A-z])(?=.*[0-9])(?=.*[@#$%^&*()-+=])([a-zA-Z0-9@._-]).{8,}$";
         Pattern pattern = Pattern.compile(regex);
-        Matcher matcher = pattern.matcher(SpecialPassword);
+        Matcher matcher = pattern.matcher(passwordRule4);
         boolean result = matcher.matches();
         System.out.println(result);
-
-        if (result)
-            System.out.println("Password is Valid");
-        else
-            System.out.println("Password is Invalid");
-        return result;
-    }
-
-    public boolean validEMailSample() {
-
-        System.out.println("Enter validEMailSample: ");
-        String EmailSample = sc.next();
-        String regex = "^(?!.*@.*@)[a-z+_-]+(.[a-z0-9])*@[a-z0-9]+(.[a-z])*.[a-z]{2,}$";
-        Pattern pattern = Pattern.compile(regex);
-        Matcher matcher = pattern.matcher(EmailSample);
-        boolean result = matcher.matches();
-        System.out.println(result);
-
-        if (result)
-            System.out.println("EMail sample is Valid");
-        else
-            System.out.println("EMail sample is Invalid");
         return result;
     }
 }
