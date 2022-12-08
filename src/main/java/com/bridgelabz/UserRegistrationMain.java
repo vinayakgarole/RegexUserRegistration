@@ -4,36 +4,38 @@ import java.util.Scanner;
 
 public class UserRegistrationMain {
 
-    public static void main(String[] args) {
-
+    public static void welcome(){
+        System.out.println("Welcome to User Registration System Problem");
+    }
+    public static void main(String[] args) throws Invalid_InputDetailsException {
+        welcome(); //calling static method
+        UserRegistration user = new UserRegistration();
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter the options:\n1. Validate First Name\n2. Validate Last Name\n3. Validate Email ID\n4. Validate Mobile Number" +
-                "\n5. Validate Password Rule1\n6. Validate Password Rule2\n7. Validate Password Rule3\n8. Validate Password Rule4");
-
+        System.out.println("Enter 1: To validate First Name:\nEnter 2: To validate Last Name:\nEnter 3: To validate email: \nEnter 4: To validate Mobile Number: \nEnter 5: To validate passwordRule1: \nEnter 6: To Validate Password Rule2 : \nEnter 7: To Validate Password Rule3 : \nEnter 8: To Validate Password Rule4 : ");
         switch (scanner.nextInt()){
             case 1:
-                UserRegistration.validFirstName("Vinayak");
+                UserRegistration.validateFirstName.validate("Vinayak");
                 break;
             case 2:
-                UserRegistration.validLastName("Garole");
+                UserRegistration.validateLastName.validate("Garole");
                 break;
             case 3:
-                UserRegistration.validEmail("abc.xyz@bl.co.in");
+                UserRegistration.validateEmail.validate("abc.xyz@bl.co.in");
                 break;
             case 4:
-                UserRegistration.validMobileNumber("91 8380867601");
+                UserRegistration.validateMobileNo.validate("91 8380867601");
                 break;
             case 5:
-                UserRegistration.validPasswordRule1("Vianyak@10");
+                UserRegistration.validatepasswordRule1.validate("Vinay005");
                 break;
             case 6:
-                UserRegistration.validPasswordRule2("Vianyak@10-12");
+                UserRegistration.validatepasswordRule2.validate("Vinay.05");
                 break;
             case 7:
-                UserRegistration.validPasswordRule3("Vianyak1@102");
+                UserRegistration.validatepasswordRule3.validate("Vinay105");
                 break;
             case 8:
-                UserRegistration.validPasswordRule4("Vianyak10@10Garole");
+                UserRegistration.validatepasswordRule4.validate("Vinay@55");
                 break;
         }
     }
